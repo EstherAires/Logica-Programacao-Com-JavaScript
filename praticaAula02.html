@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <title>Logica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Logica de Programação Java Script</h1>
+    <script>
+        
+        //soma de valores, já especificando o tipo de variável esperada
+
+        alert("Os valores inseridos serão somados");
+        
+        var a = Number (prompt("Informe o primeiro valor:"));
+        var b = Number (prompt("Informe o segundo valor:"));
+
+        alert(`A soma de ${a} + ${b} = ${a + b}`);
+        alert(`O tipo do primeiro valor é ${typeof a} e o tipo do segundo valor é ${typeof b}`);
+
+        //convertendo o tipo da variável para inteiro/flutuante
+        alert("Os valores inseridos serão somados");
+
+        var n1 = prompt("Informe o primeiro valor");
+        n1 = parseFloat(n1);
+
+        //vazendo a coversão enquanto declara a variável
+        var n2 = parseFloat(prompt("Informe o segundo valor") );
+
+        alert(`A soma de ${n1} + ${n2} = ${n1 + n2}`);
+        alert(`O tipo do primeiro valor é ${typeof n1} e o tipo do segundo valor é ${typeof n2}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <script>
+
+        //pedir para o usuário dois números e calcular a média entre eles
+
+        var n1 = prompt("informe o primeiro valor");
+        n1 = parseFloat(n1);
+        
+        var n2 = parseFloat (prompt("informe o segundo valor"));
+
+        var media = (n1 + n2)/2;
+
+        alert(`A média entre os valores informado é: ${media}`);
+
+        /*
+        
+        OPERADORES ARITMÉTICOS
+        +  Adição
+        -  Subtração
+        *  Multiplicação
+        *  Divisão
+        %  Módulo (resto da divisão)
+        ** Exponenciação
+        ++ Incremento
+        -- Decremento
+        */
+        
+        //pedir para um usuário digitar um número e converte em inteiro
+        var n1 = parseInt(prompt("Informe o primeiro valor"));
+        
+        var n2 = parseInt(prompt("Informe o segundo valor"));
+
+        //mostrar um alert unformando o resto da divisão dos números informados
+        alert(`O resto da divisão: ${n1} / ${n2} é: ${n1 % n2}`);
+        //mostrar um alert informando o resuntado da potenciação do primeiro valor pelo segundo
+        alert(`O número ${n1} elevado a ${n2} é: ${n1 ** n2}`); 
+    </script>;
+</body>
+</html>
