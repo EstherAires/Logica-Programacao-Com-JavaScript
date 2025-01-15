@@ -5,7 +5,53 @@
 <body>
     <h1>Lógica de Programação Java Script</h1>
     <script>
-        
+        //CONTROLE DE DECISÕES
+
+        //Pedir para o usuário digitar dois números e mostrar uma mensagem 
+        // informando se foi aprovado ou não.
+        //A nota de corte é 5
+        // Para adicionar na página document.write(`<br/>`)
+
+        var nota1 = Number(prompt("Informe a primeira nota"));
+        var nota2 = Number(prompt("Informe a segunda nota"));
+        var media = (nota1 + nota2)/2;
+
+        alert(media > 5);
+
+        if (media > 5){
+            alert("Você está aprovado, parabéns!");
+        } else{
+            alert("Você foi reprovado, se esforce mais na próxima.")
+        }
+
+        //Fazer jogador1 digitar um numero, fazer o jogador2 digitár outro numero
+        var jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
+        var jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
+
+        //Se foram iguais, mostrar mensagem 'empate'
+        if(jogador1 === jogador2){
+            alert("Empate")
+        }
+
+        //sortear numero entre 0 e 1
+        var sorteio = parseInt(Math.random() * 2);
+        alert(`O número sorteado é ${sorteio}`);
+
+        if(sorteio === 0){
+            //se o numero sorteado for 0, ganha quem escolher o numero MENOR
+            if(jogador1 < jogador2){
+                alert("Jogador 1 ganhou");
+            } else{
+                alert("jogador 2 ganhou");
+            }
+        }else{
+            //se o numero sorteado for 1, ganha quem escolher o numero MAIOR
+            if(jogador1 > jogador2){
+                alert("Jogador 1, você ganhou!");
+            }else{
+                alert("Jogador 2, você ganhou!");
+            }
+        }
     </script>
 </body>
 </html>

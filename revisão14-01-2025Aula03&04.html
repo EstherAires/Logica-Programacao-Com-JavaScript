@@ -4,5 +4,41 @@
 </head>
 <body>
     <h1>Lógica de Programação Java Script</h1>
+    <script>
+        alert("Área do triângulo");
+        var baseT = Number(prompt("Informe o tamanho da base:"));
+        var alturaT = Number(prompt("Informe o tamanho da altura:"));
+        var areaTriangulo = (baseT * alturaT)/2;
+        alert(`A área do triangulo é ${(areaTriangulo)}`);
+
+        alert("Área do retângulo");
+        var baseRet = Number(prompt("Informe a base:"));
+        var alturaRet = Number(prompt("Informe a altura:"));
+        var areaRetangulo = baseRet * alturaRet;
+        alert(`A área do retãngulo é ${areaRetangulo}`);
+
+        alert("Área do quadrado");
+        var lado = Number(prompt("Informe o tamanho do lado do quadrado:"));
+        var areaQuadrado = lado ** 2;
+        alert(`A área do quadrado é ${areaQuadrado}`);
+
+        alert("Área do losango");
+        var diagonalM = Number(prompt("Informe o tamanho da Diagonal maior:"));
+        var diagonalm = Number(prompt("Informe o tamanho da Diagonal menor:"));
+        var areaLosango = (diagonalM * diagonalm)/2;
+        alert(`A área do losango é ${areaLosango}`);
+
+        alert("Área do trapézio");
+        var baseMaior = Number(prompt("Informe o tamanho da base maior: "));
+        var baseMenor = Number(prompt("Informe o tamanho da base menor"));
+        var alturaTrap = Number(prompt("Informe a altura do trapézio:"));
+        var areaTrapezio = ((baseMaior + baseMenor)*alturaTrap)/2;
+        alert(`A área do trapézio é ${areaTrapezio}`);
+
+        alert(`A área do triângulo é maior que a área do retângulo?   ${areaTriangulo > areaRetangulo}`);
+        alert(`A área do quadrado é igual a área do losango?   ${areaQuadrado === areaLosango}`);
+        alert(`A área do trapézio é diferente da área do losango?   ${areaTrapezio !== areaLosango}`);
+
+    </script>
 </body>
 </html>

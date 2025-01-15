@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <script>
+        //OPERADORES LÓGICOS
+        /*
+        !  NOT - não 1°
+        && AND - e   2°
+        || OR  - ou  3°
+        */
+
+        //Pedir para o usuário digitar dois números e mostrar uma  mensagem informando se foi aprovado ou não.
+        //A nota de corte é 5, contudo se qualquer umas das notas dor 0, reprova autmaticamente
+
+        //Se nota1>0 E nota2>0 E media>5, mostra parabéns, senão, mostra reprovação
+
+        var nota1 = Number(prompt("Aluno informe a sua primeira nota: "));
+        var nota2 = Number(prompt("Agora, informe sua segunda nota"));
+        media = (nota1 + nota2)/2
+
+        if(nota1 > 0 && nota2 > 0 && media > 5){
+            alert("Parabéns, você foi aprovado!");
+        } else{
+            alert("Você foi reprovado, se esforce mais na próxima vez.")
+        }
+
+
+
+ 
+    </script>
+</body>
+</html>

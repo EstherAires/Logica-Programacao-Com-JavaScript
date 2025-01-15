@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <script>
+        
+        //Fazer jogador1 digitar um numero, fazer o jogador2 digitár outro numero
+                var jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
+        var jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
+
+        //Se foram iguais, mostrar mensagem 'empate'
+        if(jogador1 === jogador2){
+            alert("Empate")
+        }
+
+        //sortear numero entre 0 e 1
+        var sorteio = parseInt(Math.random() * 2);
+        alert(`O número sorteado é ${sorteio}`);
+
+        //se o numero sorteado for 0, ganha quem escolher o numero MENOR
+        //se o numero sorteado for 1, ganha quem escolher o numero MAIOR
+        if((sorteio === 0 && jogador1<jogador2) || 
+        (sorteio === 1 && jogador1 > jogador2)){
+            alert("Jogador 1, você ganhou")
+        }else{
+            alert("Jogador 2, você ganhou")
+        }
+    </script>
+</body>
+</html>
