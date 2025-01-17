@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <script>
+        //If or else
+        //switch case
+        //Operadores lógicos
+        /*
+        !  NOT - não 1°
+        && AND - e   2°
+        || OR  - ou  3°
+        */
+
+        /*
+        Exercício: Crie um programa que ajude a determinar o tipo de entrada de um usuário e 
+        forneça recomendações personalizadas. O programa deve:
+        - Perguntar ao usuário qual é a sua faixa etária (por exemplo, criança, adolescente, adulto ou idoso).
+        - Pedir ao usuário para informar se ele gosta de esportes (responder "sim" ou "não").
+        -Operadores lógicos para combinar as respostas (faixa etária + gosto por esportes) 
+         e fornecer recomendações personalizadas (por exemplo, esportes específicos para aqueles que gostam ou 
+         alternativas para os que não gostam)
+        */
+        
+        const faixaEtaria = ["Criança", "Adolescente", "Adulto/a", "Idoso/a."];
+
+        var idade = parseInt(prompt("Informe sua idade:"));
+
+        switch(true){
+            case idade <=12:
+            alert(`Você é uma ${faixaEtaria [0]}`);
+            break;
+
+            case idade <=18:
+            alert(`Você é um/a ${faixaEtaria [1]}`);
+            break;
+
+            case idade <= 59:
+            alert(`Você é um ${faixaEtaria [2]}`);
+            break;
+
+            case idade > 59:
+            alert(`Você é um/a ${faixaEtaria [3]}`);
+            break;
+        }
+
+        var pergunta = prompt("Você gosta de esportes? (responda sim ou não)");
+
+        if(pergunta == "sim"|| pergunta ==  "Sim"|| pergunta ==  "SIM" && faixaEtaria[0]){
+            alert("Que legal, recomento que pratique: Natação, ginástica, futebol, judô ou karatê, dança e ciclismo.");
+        }else if(pergunta == "sim"|| pergunta == "Sim"|| pergunta == "SIM" && faixaEtaria[1]){
+            alert("Isso é ótimo, recomendo que pratique: Atletismo, basquete ou vôlei, artes marciais, esportes coletivos/aquaticos, escalada/parkour, skate/patins.");
+        }else if(pergunta == "sim"|| pergunta == "Sim"||pergunta == "SIM" && faixaEtaria[2]){
+            alert("Que bom, você pode praticar: musculação/crossfit, corrida/caminhada, yoga/pilates, ciclismo/spinning, tecnicas de luta, esportes coletivos/recreativos e esportes ao ar livre.");
+        }else if(pergunta == "sim"|| pergunta == "Sim"||pergunta == "SIM" && faixaEtaria[3]){
+            alert("Que bom, você pode praticar: caminhada leve, hidroginastica, youga/ tai chi chuan, dança de salão, peteca/bocha, ciclismo leve.");
+        }else{
+            alert("Que pena, entendo não goste de esportes, mas é importante praticar atividades físicas para manter a saúde em dia. Que tal tentar algo novo?");
+            alert("Tente se dedicar a hobbies como: Meditação, Sessões de Spa, assistir séries e filmes, escrever, jogar, viajar, trabalhar voluntariamente, ler ou praticar culinária.");
+        }
+
+    </script>
+</body>
+</html>
