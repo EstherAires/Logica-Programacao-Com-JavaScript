@@ -10,6 +10,8 @@
         //DO WHILE
         // FOR
 
+
+        //while
         // Pedir para o usuário figitar um numero e mostrar a tabuada desse numero de 1 a 1000
         var numero = parseFloat(prompt("Digite um numero"));
 
@@ -25,6 +27,22 @@
         }
         document.write("Saiu do loop")
 
+        //do while: quando precisamos que o bloco de código seja executado pelo menos uma vez
+
+        var indice = 1;
+''
+        do{
+            document.write(`${numero} x ${indice} = ${numero * indice}<br>`);
+            indice = indice + 1;
+        }while(indice <= 1000)
+        document.write("Saiu do loop")
+
+        //for
+        // for(inicialização; condição; incremento){
+
+        for(i = 1; i <= 1000; i++){
+            document.write(`${numero} x ${i} = ${numero * i}<br>`);
+        }
     </script>
 </body>
 </html>
