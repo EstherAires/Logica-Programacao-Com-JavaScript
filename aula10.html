@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <button onclick="area(largura, altura)">Calcular Área</button>
+    <div id = "output"></div>
+    <script>
+        //FUNÇÕES
+        //Funções que recebem parâmetros
+        //Funções que recebe, valores (parâmetros/argumentos) são úteis quando queremos reaproveitar o código
+        // Pedir para o usuário digitar dois números que representam os lados de um retângulo 
+        // assim que a página é carregada. Mostrar na tela a área total quando clicar num botão.
+
+
+        let largura = parseFloat(prompt("Digite a largua do retângulo:"));
+        let altura = parseFloat(prompt("Digite a altura do retângulo"));
+        let output = document.querySelector("#output");
+
+        function area(largura, altura){
+            let areaTotal = largura * altura;
+            alert(`A área do retângulo é ${areaTotal}`);
+            output.innerHTML = (`A área do retângulo é ${areaTotal}`);
+        }
+        
+    </script>
+</body>
+</html>

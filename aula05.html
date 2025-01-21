@@ -12,9 +12,9 @@
         //A nota de corte é 5
         // Para adicionar na página document.write(`<br/>`)
 
-        var nota1 = Number(prompt("Informe a primeira nota"));
-        var nota2 = Number(prompt("Informe a segunda nota"));
-        var media = (nota1 + nota2)/2;
+        let nota1 = Number(prompt("Informe a primeira nota"));
+        let nota2 = Number(prompt("Informe a segunda nota"));
+        let media = (nota1 + nota2)/2;
 
         alert(media > 5);
 
@@ -25,8 +25,8 @@
         }
 
         //Fazer jogador1 digitar um numero, fazer o jogador2 digitár outro numero
-        var jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
-        var jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
+        let jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
+        let jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
 
         //Se foram iguais, mostrar mensagem 'empate'
         if(jogador1 === jogador2){
@@ -34,7 +34,7 @@
         }
 
         //sortear numero entre 0 e 1
-        var sorteio = parseInt(Math.random() * 2);
+        let sorteio = parseInt(Math.random() * 2);
         alert(`O número sorteado é ${sorteio}`);
 
         if(sorteio === 0){

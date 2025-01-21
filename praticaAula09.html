@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+
+    <button onclick="operacoes('+')">+</button>
+    <button onclick="operacoes('-')">-</button>
+    <button onclick="operacoes('*')">*</button>
+    <button onclick="operacoes('/')">/</button>
+    <button onclick="operacoes('limpar')">Limpar</button>
+
+    <div id = output></div>
+
+    <script>
+
+        let output = document.querySelector("#output");
+
+        let total = 0;
+        output.innerHTML = total;
+
+        function operacoes(operador) {
+            let n = parseFloat(prompt("Digite o número:"));
+            switch(operador){
+                case '+':
+                    total += n;
+                    break;
+                case '-':
+                    total -= n;
+                    break;
+                case '*':
+                    total *= n;
+                    break;
+                case '/':
+                    total /= n;
+                    break;
+                case 'limpar':
+                    total = 0;
+                    break;
+            }
+        }
+
+        // function adicao(){
+        //     let n = parseFloat(prompt("Digite o número:"));
+        //     total += n;
+        //     output.innerHTML = total;
+        // }
+
+        // function subtracao(){
+        //     let n = parseFloat(prompt("Digite o número:"));
+        //     total -= n;
+        //     output.innerHTML = total;
+        // }
+        
+        // function multiplicacao(){
+        //     let n = parseFloat(prompt("Digite o número:"));
+        //     total *= n;
+        //     output.innerHTML = total;
+        // }
+
+        // function divisao(){
+        //     let n = parseFloat(prompt("Digite o número:"));
+        //     total /= n;
+        //     output.innerHTML = total;
+        // }
+
+        // function limpar(){
+        //     total = 0;
+        //     output.innerHTML = total;
+        // }
+
+
+
+    </script>
+</body>
+</html>

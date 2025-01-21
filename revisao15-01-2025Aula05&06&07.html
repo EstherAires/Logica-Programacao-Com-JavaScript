@@ -26,7 +26,7 @@
         
         const faixaEtaria = ["Criança", "Adolescente", "Adulto/a", "Idoso/a."];
 
-        var idade = parseInt(prompt("Informe sua idade:"));
+        let idade = parseInt(prompt("Informe sua idade:"));
 
         switch(true){
             case idade <=12:
@@ -46,7 +46,7 @@
             break;
         }
 
-        var pergunta = prompt("Você gosta de esportes? (responda sim ou não)");
+        let pergunta = prompt("Você gosta de esportes? (responda sim ou não)");
 
         if(pergunta == "sim"|| pergunta ==  "Sim"|| pergunta ==  "SIM" && faixaEtaria[0]){
             alert("Que legal, recomento que pratique: Natação, ginástica, futebol, judô ou karatê, dança e ciclismo.");

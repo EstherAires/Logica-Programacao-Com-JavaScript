@@ -17,24 +17,25 @@
         Ao final, o programa deve exibir o número de tentativas feitas.
         */
 
-        // var numero = parseInt(Math.random()*100) + 1;
-        // var advinhacao = parseInt(prompt("Digite seu palpite (1 - 100)"));
-        // var tentativa = 0;
+        let numero = parseInt(Math.random()*100) + 1;
+        let advinhacao = parseInt(prompt("Digite seu palpite (1 - 100)"));
+        let tentativa = 0;
 
-        // while(advinhacao != numero){
-        //     if(advinhacao > numero){
-        //         alert("O número é menor");
-        //     }else{
-        //         alert("O número é maior");
-        //     }
-        //     var tentativa = tentativa + 1;
-        //     alert(`Tentativa: ${tentativa}`)
-        //     var advinhacao = parseInt(prompt("Digite seu palpite (1 - 100)"));
-        // }
+        while(advinhacao != numero){
+            if(advinhacao > numero){
+                alert("O número é menor");
+            }else{
+                alert("O número é maior");
+            }
+            let tentativa = tentativa + 1;
+            alert(`Tentativa: ${tentativa}`)
+            let advinhacao = parseInt(prompt("Digite seu palpite (1 - 100)"));
+        }
 
-        // alert(`Parabéns, você acertou o número: ${numero} em ${tentativa} tentativas`);
+        alert(`Parabéns, você acertou o número: ${numero} em ${tentativa} tentativas`);
 
-        var numero = parseFloat(prompt("Digite um numero"));
+        // //Descrição: Escreva um código que multiplique o número dado pelo usuário de 1 a 1000.
+        let numero = parseFloat(prompt("Digite um numero"));
 
         for(i = 0; i <= 1000; i++){
             document.write(`${numero} x ${i} = ${numero * i}<br>`);
@@ -43,18 +44,19 @@
             }
         }
         
-        for(i=1, i<=100, i++){
+        for(i=1; i<=100; i++){
             soma += i;
         }
-        document.write(`soma de 1 a 100: ${i}`);
+        document.write(`<h3>soma de 1 a 100: ${i}<br></h3>`);
 
-        for(i = 1, i <= 100, i++){
-            if (i % 2 == 0){
-                soma += i;
-                document.write(`A soma de ${i} + ${soma} = ${i+soma}`);
+        //Para este exercício, mostre na tela todos os anos a partir de 1004 até o ano 2017, 
+        //pulando de quatro em quatro anos.
+        document.write(`<h3> Anos bissextos </h3><br>`)
+        for(i = 1004; i <= 2017; i++){
+            if ((i % 4 == 0) && (i % 400 == 0 || i % 100 != 0)){
+                document.write(`${i}<br>`);
             }
         }
-        
 
     </script>
 </body>

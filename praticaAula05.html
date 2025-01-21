@@ -7,8 +7,8 @@
     <script>
         
         //Fazer jogador1 digitar um numero, fazer o jogador2 digitár outro numero
-                var jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
-        var jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
+                let jogador1 = Number(parseInt(prompt("Jogador 1, informe um número:")));
+        let jogador2 = Number(parseInt(prompt("Jogador 2, informe um número:")));
 
         //Se foram iguais, mostrar mensagem 'empate'
         if(jogador1 === jogador2){
@@ -16,7 +16,7 @@
         }
 
         //sortear numero entre 0 e 1
-        var sorteio = parseInt(Math.random() * 2);
+        let sorteio = parseInt(Math.random() * 2);
         alert(`O número sorteado é ${sorteio}`);
 
         //se o numero sorteado for 0, ganha quem escolher o numero MENOR
