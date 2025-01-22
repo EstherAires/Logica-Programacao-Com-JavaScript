@@ -5,72 +5,54 @@
 <body>
     <h1>Lógica de Programação Java Script</h1>
 
-    <button onclick='iniciarCalculo("+")'>+</button>
-    <button onclick='iniciarCalculo("-")'>-</button>
-    <button onclick='iniciarCalculo("*")'>*</button>
-    <button onclick='iniciarCalculo("/")'>/</button>
-    
-    <div id= 'resultado'></div>
-    
-    
+    <button onclick = "iniciarCalculo('+')">+</button>
+    <button onclick = "iniciarCalculo('-')">-</button>
+    <button onclick = "iniciarCalculo('*')">*</button>
+    <button onclick = "iniciarCalculo('/')">/</button>0
+
+    <div id = "resuldado"></div>
+
     <script>
-        
-        var resultado= document.querySelector('#resultado');
-        var n2= parseFloat(prompt('digite um número'));
-        
+        var resuldado = document.querySelector('#resultado');
+        var n2 = parseFloat(prompt('Digite um número'));
+
         output(n2);
         
         function iniciarCalculo(simbolo){
-            var n1= document.querySelector('#resultado').textContent;
-            
-            var n2= parseFloat(prompt('digite outro número'));
-            
-            var msg= calcular(simbolo, n1, n2);
-            
-            output (msg);
-            
-            
-            
-            
-        }
-        
-        
-        function output(mensagem){
-            resultado.innerHTML= mensagem
-        }
-        
-        
-        function calcular(simbolo, n1, n2){
-            
-            var numeroCalculado= null;
-            
-            
-            switch(simbolo){
-                
-                case "+":
-                numeroCalculado= parseFloat(n1) + parseFloat(n2);
-                break;
-                
-                case "-":
-                numeroCalculado= n1 - n2;
-                break;
-                
-                case "*":
-                numeroCalculado= n1 * n2;
-                break;
-                
-                case "/":
-                numeroCalculado= n1/n2;
-                
-            }
-            
-            
-            return numeroCalculado;
-                
-                
-        }
-            
+            var n1 = document.querySelector("#resultado").textContent;
 
+            var n2 = parseFloat(prompt('Digite outro número'));
+
+            var msg = calcular(simbolo, n1, n2);
+
+            output(msg);
+        }
+
+        function output(mensagem){
+            resultado.innerHTML = mensagem;
+        }   
+
+        function calcular(simbolo, n1, n2){
+            var numeroCalculado = null;
+
+            switch(simbolo){
+                case "+":
+                    numeroCalculado = parseFloat(n1) + parseFloat(n2);
+                    break;
+                case "-":
+                    numeroCalculado = n1 - n2;
+                    break;
+                case "*":
+                    numeroCalculado = n1 * n2;
+                    break;
+                case "/":
+                    numeroCalculado = n1 / n2;
+                    break;
+            }
+            return numeroCalculado;
+        }
+
+        
         // function adicao(){
         //     let n = parseFloat(prompt("Digite o número:"));
         //     total += n;
@@ -100,8 +82,8 @@
         //     output.innerHTML = total;
         // }
 
-
-
     </script>
+
+    
 </body>
 </html>
