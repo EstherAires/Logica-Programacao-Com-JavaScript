@@ -4,41 +4,114 @@
 </head>
 <body>
     <h1>Lógica de Programação Java Script</h1>
-    <button onclick="operacao('+')"></button>
-    <button onclick="operacao('-')"></button>
-    <button onclick="operacao('*')"></button>
-    <button onclick="operacao('/')"></button>
-    <button onclick="operacao('^')"></button>
-    <button onclick="operacao('√')"></button>
+
+    <button onclick="pergunta('+')">+</button>
+    <button onclick="pergunta('-')">-</button>
+    <button onclick="pergunta('*')">*</button>
+    <button onclick="pergunta('/')">/</button>
+    <button onclick="pergunta('^')">^</button>
+    <button onclick="pergunta('√')">√</button>
     
     <div id = "resultado"></div>
-    <div id = "historico"></div>
+    <div id = "historico"> </div>
+    
     <script>
-//Interface do Usuário:
+    //Interface do Usuário:
 
-// Crie uma interface com botões para as operações básicas (+, -, *, /) e botões adicionais para:
-// Exponenciação (^).
-// Raiz quadrada (√).
-// Limpar o valor atual.
+    // -Crie uma interface com botões para as operações básicas (+, -, *, /) e botões adicionais para:
+    // -Exponenciação (^).
+    // -Raiz quadrada (√).
+    // Limpar o valor atual. 
 
-// Entrada de Números:
-// Solicite o primeiro número assim que a página for carregada.
-// Para operações que requerem dois números (como +, -, etc.), solicite o segundo número apenas quando o botão correspondente for clicado.
-// Para operações que requerem apenas um número (como raiz quadrada), use o valor atualmente exibido.
+    // Entrada de Números:
+    // -Solicite o primeiro número assim que a página for carregada.
+    // -Para operações que requerem dois números (como +, -, etc.), solicite o segundo número apenas quando o botão correspondente for clicado.
+    // -Para operações que requerem apenas um número (como raiz quadrada), use o valor atualmente exibido.
 
-// Funções do Programa:
-// Implemente uma função chamada atualizarResultado para exibir o valor atual na tela.
-// Use switch para selecionar a operação correta com base no símbolo.
+    // Funções do Programa:
+    // -Implemente uma função chamada atualizarResultado para exibir o valor atual na tela.
+    // -Use switch para selecionar a operação correta com base no símbolo.
 
-// Histórico:
-// Adicione uma seção na interface para exibir o histórico de operações realizadas.
+    // Histórico:
+    // Adicione uma seção na interface para exibir o histórico de operações realizadas.
 
-// Validações:
-// Evite erros como divisão por zero.
-// Certifique-se de que a entrada seja um número válido.
+    // Validações:
+    // -Evite erros como divisão por zero.
+    // Certifique-se de que a entrada seja um número válido.
 
+    let resultado = document.querySelector("#resultado");
+    //let historico = documment.querySelector("#historico");
+
+    let n1 = parseFloat(prompt("Digite um número"));
+
+    // validacao(n1);
+    atualizarResultado(n1);
+
+    function pergunta(simbolo){
+        n1 = parseFloat(document.querySelector("#resultado").textContent);
+        let n2 = parseFloat(prompt("Digite outro numero"));
+        // validacao(n2);
+        let teste = operacao(simbolo, n1, n2);
+        atualizarResultado(teste);
+    }
+
+    function atualizarResultado(mensagem){
+        resultado.innerHTML = mensagem;
+     }
+
+    function operacao(simbolo, n1, n2){
+
+        let total = (null);
+
+        switch (simbolo) {
+            case "+":
+                total = parseFloat(n2) + parseFloat(n1);
+                alert(n1)
+                break;
+
+            case "-":
+                total = n2 - n1;
+                break;
+
+            case "*":
+                total = n2 * n1;
+                break;
+
+            case "/":
+                total = n2 / n1;
+                break;
+
+            case "^":
+                total = n1 ^ n2;
+                break;
+
+            case "√":
+                total = Math.sqrt( n1 = parseFloat(document.querySelector("#resultado").textContent));
+                break;
+        }
+
+        return total;
+
+        // if (n2 == 0 && simbolo == "/"){
+        // //      atualizarResultado("Erro Divisão por zero");
+        // // } else {
+        // //     pergunta(simbolo);
+        // // }
+        // // return total;
+        // }
+    }
+
+    // function validacao(n1, n2){
+    //     if(typeof n1 !== "number" || isNaN(n1) || !n1){
+    //         atualizarResultado("Valor inválido");
+    //         console.log(typeof n1)
+    //         console.log(n1)
+    //         console.log(n1.value)
+    //     }
+    // } 
+    
 
 
     </script>
 </body>
-</html>
+</html> 
