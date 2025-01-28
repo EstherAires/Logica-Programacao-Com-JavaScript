@@ -1,22 +1,101 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Lógica de Programação Java Script</title>
+    <title>Calculadora</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #fdf5e6;
+            color: #444;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #ff6f61;
+            margin-top: 20px;
+        }
+
+        #container {
+            display: inline-block;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        #resultado {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background: #ffe4e1;
+            border: 2px solid #ff6f61;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 50px;
+            background-color: #ffcccb;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff6f61;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            background-color: #d55a4b;
+        }
+
+        #historico {
+            text-align: left;
+            font-size: 14px;
+            background: #f8f8ff;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+        }
+    </style>
 </head>
 <body>
-    <h1>Lógica de Programação Java Script</h1>
-    <button onclick = "calculo('+')">+</button>
-    <button onclick = "calculo('-')">-</button>
-    <button onclick = "calculo('*')">*</button>
-    <button onclick = "calculo('/')">/</button>
-    <button onclick = "calculo('^')">^</button>
-    <button onclick = "calculo('raiz')">√</button>
-    <button onclick = "calculo('limpar')">Limpar</button>
-    <br><br>
-    <div id = "resultado">0</div>
-    <div id = "historico"><br><br><hr><h3>Histórico de operações</h3><br></div>
+    <h1>Calculadora Fofa</h1>
+    <div id="container">
+        <div id="resultado">0</div>
+        <button onclick="calculo('+')">+</button>
+        <button onclick="calculo('-')">-</button>
+        <button onclick="calculo('*')">*</button>
+        <button onclick="calculo('/')">/</button>
+        <button onclick="calculo('^')">^</button>
+        <button onclick="calculo('raiz')">√</button>
+        <button onclick="calculo('limpar')">Limpar</button>
+    </div>
+    <div id="historico">
+        <h3>Histórico de Operações</h3>
+    </div>
     <script>
-
+        
         let resultado = document.querySelector('#resultado');
         let historico = document.querySelector('#historico');
         
@@ -117,31 +196,5 @@
         } 
 
     </script>
-
-    <script>
-     //Interface do Usuário:
-
-    // -Crie uma interface com botões para as operações básicas (+, -, *, /) e botões adicionais para:
-    // -Exponenciação (^).
-    // -3 quadrada (3).
-    // -Limpar o valor atual. 
-
-    // Entrada de Números:
-    // -Solicite o primeiro número assim que a página for carregada.
-    // -Para operações que requerem dois números (como +, -, etc.), solicite o segundo número apenas quando o botão correspondente for clicado.
-    // -Para operações que requerem apenas um número (como 3 quadrada), use o valor atualmente exibido.
-
-    // Funções do Programa:
-    // -Implemente uma função chamada atualizarResultado para exibir o valor atual na tela.
-    // -Use switch para selecionar a operação correta com base no símbolo.
-
-    // Histórico:
-    // -Adicione uma seção na interface para exibir o histórico de operações realizadas.
-
-    // Validações:
-    // -Evite erros como divisão por zero.
-    // -Certifique-se de que a entrada seja um número válido.
-    </script>
 </body>
-
 </html>
