@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Fofa</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fdf5e6;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        #resultado {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculadora {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .tela {
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #ff99c8;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 15px;
+            background: #ffcccb;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #ff6f61;
+            color: #fff;
+        }
+
+        .limpar {
+            background: #fc9f9d;
+        }
+
+        .limpar:hover {
+            background: #fa7572;
+        }
+
+        h1 {
+            color: #fa675a;
+            margin-top: 20px;
+            font-family: "Cascadia Code";
+        }
+        .container-title{
+            display: flex;
+            gap: 10px;
+        }
+        .robo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item-robo {
+            font-weight: 800;
+            color: #fa675a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-title">
+        <h1 id="title-calc">Calculadora</h1>
+        <div class="robo">
+            <span class="item-robo"> (\_/) </span>
+            <span class="item-robo"> (> <) </span>
+            <span class="item-robo"> /> <\ </span>
+        </div>
+    </div>
+    <div class="calculadora">
+        <div class="tela" id="resultado"></div>
+        <div class="botoes">
+            <button onclick="adicionar('7')">7</button>
+            <button onclick="adicionar('8')">8</button>
+            <button onclick="adicionar('9')">9</button>
+            <button onclick="adicionar('/')">/</button>
+            <button onclick="adicionar('4')">4</button>
+            <button onclick="adicionar('5')">5</button>
+            <button onclick="adicionar('6')">6</button>
+            <button onclick="adicionar('*')">*</button>
+            <button onclick="adicionar('1')">1</button>
+            <button onclick="adicionar('2')">2</button>
+            <button onclick="adicionar('3')">3</button>
+            <button onclick="adicionar('-')">-</button>
+            <button onclick="adicionar('0')">0</button>
+            <button onclick="adicionar('.')">.</button>
+            <button onclick="calcular()">=</button>
+            <button onclick="adicionar('+')">+</button>
+            <button class="limpar" onclick="limpar()">C</button>
+        </div>
+    </div>
+
+    <script>
+        function adicionar(valor) {
+            let tela = document.getElementById("resultado");
+            if (tela.innerText === "0") {
+                tela.innerText = valor;
+            } else {
+                tela.innerText += valor;
+            }
+        }
+        function calcular() {
+            let tela = document.getElementById("resultado");
+            try {
+                tela.innerText = eval(tela.innerText);
+            } catch {
+                tela.innerText = "Erro";
+            }
+        }
+        function limpar() {
+            document.getElementById("resultado").innerText = "";
+        }
+
+        const title = document.getElementById("title-calc")
+
+
+
+
+    </script>
+</body>
+
+</html>

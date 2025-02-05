@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #fdf5e6;
+            color: #444;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #e27c72;
+            margin-top: 20px;
+        }
+
+        #altura {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background: #ffe4e1;
+            border: 2px solid #ff6f61;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 20px;
+            margin-left: 400px;
+            margin-right: 400px;
+            margin: auto;
+            outline: none;
+        }
+
+        #peso {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background: #ffe4e1;
+            border: 2px solid #ff6f61;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 20px;
+            margin-left: 400px;
+            margin-right: 400px;
+            margin: auto;
+            outline: none;
+        }
+
+        button {
+            font-family: 'Comic Sans MS', sans-serif;
+            font-size: 16px;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 50px;
+            background-color: #ffcccb;
+            color: #000000;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #ff6f61;
+            transform: scale(1.1);
+            color: #ffffff;
+        }
+
+        button:active {
+            background-color: #d55a4b;
+        }
+
+        h2 {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #fdf5e6;
+            color: #b592d6;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bunnyContainer{
+            position: relative;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-wrap: wrap;
+            gap: 80px;
+            height: 100vh;
+            margin-left: 55px;
+            z-index: 3;
+        }
+
+        .bunny{
+            position: absolute;
+            top: 200px;
+            left: 155px;
+            width: 350px;
+            min-width: 250px; 
+            max-width: 400px;
+            height: 500px;
+            border: none;
+            border-radius: 50px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-wrap: wrap;
+            gap: 80px;
+            height: 100vh;
+            margin-left: 55px;
+            z-index: 1;
+        }
+
+        .informativo {
+            position: relative;
+            width: 350px;
+            min-width: 250px; 
+            max-width: 400px;
+            height: 350px;
+            border: none;
+            border-radius: 50px;
+            padding: 20px;
+            text-align: left;
+            color: rgb(27, 8, 8);
+            background-color: rgba(252, 218, 218, 0.973); /* Vermelho claro */
+            font-size: 16px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+
+        .encapsulamentoCalculadora{
+            display: center;
+            justify-content: left;
+            align-items: left;
+            gap: 80px;
+            height: 100vh;
+            margin-left: 150px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+<h1>Calculadora IMC</h1>
+<br>
+
+<div class="bunnyContainer">
+    <div class="bunny">
+        <img src="bunny.gif" alt="bunny" height="400" width="500">
+    </div>
+
+<div class="container">
+    <div class="informativo">
+        <h3>O que é o IMC?</h3>
+        <p>O Índice de Massa Corporal (IMC) é uma medida usada para avaliar se uma pessoa está dentro do peso ideal para sua altura.</p>
+        <p><br>🟪        Classificação IMC         🟪
+        <br>
+        <br> 🔸Abaixo de 18,5      ->   Abaixo do peso
+        <br> 🔸Entre 18,6 e 24,9   ->   Peso normal
+        <br> 🔸Entre 25,0 e 29,9   ->   Sobrepeso
+        <br> 🔸Entre 30,0 e 34,9   ->   Obesidade grau I
+        <br> 🔸Entre 35,0 e 39,9   ->   Obsidade Grau II
+        <br> 🔸Acima de 40,0       ->   Obesidade grau III
+    </div>
+
+    
+
+<div class="encapsulamentoCalculadora">
+    <div id="avaliacao"></div>
+    <br>
+    <h3>Informe seu peso</h3>
+    <input id="peso">
+    <h1></h1>
+    <h3>Informe sua altura</h3>
+    <input id="altura">
+    <h1></h1>
+    <button onclick="calculoIMC()">Saiba seu IMC</button>
+    <h1></h1>
+    <h1></h1>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function calculoIMC(){
+            let resultado = document.querySelector("#resultado");
+            let peso = parseFloat(document.getElementById("peso").value.replace(/,/g, "."));
+            let altura = parseFloat(document.getElementById("altura").value.replace(/,/g, "."));
+
+            if (isNaN(peso) || isNaN(altura) || altura <=0 || peso <=0 ){
+                resultado.innerHTML = `!!Verifique os campos de peso e altura e tente novamente!!`;
+                return;
+            }
+
+            console.log(peso, altura);
+
+            let imc = peso / (altura * altura);
+            imc = parseFloat(imc.toFixed(2));
+
+            console.log(imc);
+
+            resultado.innerHTML = `Indice de massa corporal: ${imc.toFixed(2)}`;
+
+            avaliacao(imc);
+        }
+
+        function avaliacao(calculo){
+            let avaliacao = document.querySelector("#avaliacao");
+
+            if (calculo < 18.5) {
+                avaliacao.innerHTML = "<h2> Magreza </h2>";
+            } else if (calculo > 18.5 && calculo < 25.00) {
+                avaliacao.innerHTML = "<h2> Peso Normal </h2>";
+            } else if (calculo > 24.99 && calculo < 30.00) {
+                avaliacao.innerHTML = "<h2> Sobrepeso </h2>";
+            } else if (calculo > 29.99 && calculo < 35.00) {
+                avaliacao.innerHTML = "<h2> Obesidade grau I </h2>";
+            } else if (calculo > 34.99 && calculo < 40.00) {
+                avaliacao.innerHTML = "<h2> Obesidade grau II </h2>";
+            }else {
+                avaliacao.innerHTML = "<h2> Obesidade grau III</h2>";
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
