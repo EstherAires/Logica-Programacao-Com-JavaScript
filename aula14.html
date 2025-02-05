@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <h3>Produtos disponíveis para compra <br></h3>
+    <div id="teste"></div>
+    <script>
+        //ARRAY
+        //Mostrar na tela todos os produtos disponíveis para compra.
+        // Os nomes dos produtos estão agrupados num array
+
+        function produtosDisponíveis(produtinhos){
+            
+            let lista = document.querySelector("#teste");
+            let contador = 1;
+
+            for (let i = 0; i < produtinhos.length; i++){
+                lista.innerHTML += `${contador}: ${produtinhos[i].toString()}<br>`; 
+                contador += 1;  
+            }
+        }
+
+        let produtos = ["Shampoo", "Condicionador", "Creme Hidratante", "Sabonete", "Protetor Solar"];
+        produtosDisponíveis(produtos);
+
+    </script>
+</body>
+</html>

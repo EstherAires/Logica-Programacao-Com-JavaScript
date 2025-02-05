@@ -1,0 +1,68 @@
+'<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    
+    <button onclick="areaAlert()">Área alert</button>
+    <button onclick="areaOutput()">Área ouput </button>
+    <div id="output"></div>
+
+    <script>
+    //FUNÇÕES QUE RETORNAM VALORES
+    // Funções que retornam valores
+    // são úteis para que o desenvolvedor tenha autonomia.
+    // para decidir o que deseja fazer com o valor retornado
+
+    // Pedir para o usuário digitar dois números que representam os lados de um retângulo. 
+    // Mostrar na tela a área total de duas formas distintas: 
+    // Num alert ou na div#output (dependendo do botão clicado). 
+    // Esse código não precisa ser executado quando a página é aberta.
+
+    let output = document.querySelector("#output");
+        
+
+    function areaOutput(){
+        let largura = prompt("Informe a largura do retângulo:");
+        let altura = prompt("Informe a altura do retângulo:");
+        let  area;
+        try {
+            area = calculaArea(largura, altura);
+        } catch (error) {
+            area = (`Área total: ${error}`);
+        }
+        output.innerHTML = (`Área total: ${area}`);
+    }   
+
+    function areaAlert(){
+        let largura = prompt("Informe a largura do retângulo:");
+        let altura = prompt("Informe a altura do retângulo:");
+        let  area;
+        try {
+            area = calculaArea(largura, altura);
+        } catch (error) {
+            area = (`Area total: ${error}`);
+        }
+        alert(`Área total: ${area}`);
+    }
+
+    function calculaArea(largura, altura){
+        let total = Number(altura * largura);
+
+        if(largura === undefined || altura === undefined){
+            throw new Error("calculaArea precisa receber dois valores");
+        }
+
+        if(isNaN(largura) || isNaN(altura)){
+            throw new Error("apenas numeros são aceitos");
+        }
+
+        return total;
+    }
+
+
+
+    </script>
+</body>
+</html>
