@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <title>Lógica de Programação Java Script</title>
     <meta charset="UTF-8">
@@ -10,6 +11,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            max-height: 100vh;
         }
 
         h1 {
@@ -30,6 +32,7 @@
             margin-right: 400px;
             margin: auto;
             outline: none;
+
         }
 
         #peso {
@@ -80,7 +83,7 @@
             padding: 0;
         }
 
-        .bunnyContainer{
+        .bunnyContainer {
             position: relative;
             display: flex;
             justify-content: left;
@@ -92,12 +95,12 @@
             z-index: 3;
         }
 
-        .bunny{
+        .bunny {
             position: absolute;
             top: 200px;
             left: 155px;
             width: 350px;
-            min-width: 250px; 
+            min-width: 250px;
             max-width: 400px;
             height: 500px;
             border: none;
@@ -121,7 +124,7 @@
         .informativo {
             position: relative;
             width: 350px;
-            min-width: 250px; 
+            min-width: 250px;
             max-width: 400px;
             height: 350px;
             border: none;
@@ -129,14 +132,15 @@
             padding: 20px;
             text-align: left;
             color: rgb(27, 8, 8);
-            background-color: rgba(252, 218, 218, 0.973); /* Vermelho claro */
+            background-color: rgba(252, 218, 218, 0.973);
+            /* Vermelho claro */
             font-size: 16px;
             font-weight: bold;
             z-index: 2;
         }
 
 
-        .encapsulamentoCalculadora{
+        .encapsulamentoCalculadora {
             display: center;
             justify-content: left;
             align-items: left;
@@ -146,94 +150,122 @@
         }
 
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+
+        ::-webkit-input-placeholder {
+            color: rgb(250, 188, 188);
+        }
+
+        :-moz-placeholder {
+            color: rgb(250, 188, 188);
+
+        }
+
+        ::-moz-placeholder {
+            color: rgb(250, 188, 188);
+
+
+        }
+
+        :-ms-input-placeholder {
+            color: rgb(250, 188, 188);
+
+
+        }
     </style>
 </head>
 
 <body>
-<h1>Calculadora IMC</h1>
-<br>
-
-<div class="bunnyContainer">
-    <div class="bunny">
-        <img src="bunny.gif" alt="bunny" height="400" width="500">
-    </div>
-
-<div class="container">
-    <div class="informativo">
-        <h3>O que é o IMC?</h3>
-        <p>O Índice de Massa Corporal (IMC) é uma medida usada para avaliar se uma pessoa está dentro do peso ideal para sua altura.</p>
-        <p><br>🟪        Classificação IMC         🟪
-        <br>
-        <br> 🔸Abaixo de 18,5      ->   Abaixo do peso
-        <br> 🔸Entre 18,6 e 24,9   ->   Peso normal
-        <br> 🔸Entre 25,0 e 29,9   ->   Sobrepeso
-        <br> 🔸Entre 30,0 e 34,9   ->   Obesidade grau I
-        <br> 🔸Entre 35,0 e 39,9   ->   Obsidade Grau II
-        <br> 🔸Acima de 40,0       ->   Obesidade grau III
-    </div>
-
-    
-
-<div class="encapsulamentoCalculadora">
-    <div id="avaliacao"></div>
+    <h1>Calculadora IMC</h1>
     <br>
-    <h3>Informe seu peso</h3>
-    <input id="peso">
-    <h1></h1>
-    <h3>Informe sua altura</h3>
-    <input id="altura">
-    <h1></h1>
-    <button onclick="calculoIMC()">Saiba seu IMC</button>
-    <h1></h1>
-    <h1></h1>
 
-    <div id="resultado"></div>
+    <div class="bunnyContainer">
+        <div class="bunny">
+            <img src="bunny.gif" alt="bunny" height="400" width="500">
+        </div>
 
-    <script>
-
-        function calculoIMC(){
-            let resultado = document.querySelector("#resultado");
-            let peso = parseFloat(document.getElementById("peso").value.replace(/,/g, "."));
-            let altura = parseFloat(document.getElementById("altura").value.replace(/,/g, "."));
-
-            if (isNaN(peso) || isNaN(altura) || altura <=0 || peso <=0 ){
-                resultado.innerHTML = `!!Verifique os campos de peso e altura e tente novamente!!`;
-                return;
-            }
-
-            console.log(peso, altura);
-
-            let imc = peso / (altura * altura);
-            imc = parseFloat(imc.toFixed(2));
-
-            console.log(imc);
-
-            resultado.innerHTML = `Indice de massa corporal: ${imc.toFixed(2)}`;
-
-            avaliacao(imc);
-        }
-
-        function avaliacao(calculo){
-            let avaliacao = document.querySelector("#avaliacao");
-
-            if (calculo < 18.5) {
-                avaliacao.innerHTML = "<h2> Magreza </h2>";
-            } else if (calculo > 18.5 && calculo < 25.00) {
-                avaliacao.innerHTML = "<h2> Peso Normal </h2>";
-            } else if (calculo > 24.99 && calculo < 30.00) {
-                avaliacao.innerHTML = "<h2> Sobrepeso </h2>";
-            } else if (calculo > 29.99 && calculo < 35.00) {
-                avaliacao.innerHTML = "<h2> Obesidade grau I </h2>";
-            } else if (calculo > 34.99 && calculo < 40.00) {
-                avaliacao.innerHTML = "<h2> Obesidade grau II </h2>";
-            }else {
-                avaliacao.innerHTML = "<h2> Obesidade grau III</h2>";
-            }
-
-        }
+        <div class="container">
+            <div class="informativo">
+                <h3>O que é o IMC?</h3>
+                <p>O Índice de Massa Corporal (IMC) é uma medida usada para avaliar se uma pessoa está dentro do peso
+                    ideal para sua altura.</p>
+                <p><br>🟪 Classificação IMC 🟪
+                    <br>
+                    <br> 🔸Abaixo de 18,5 -> Abaixo do peso
+                    <br> 🔸Entre 18,6 e 24,9 -> Peso normal
+                    <br> 🔸Entre 25,0 e 29,9 -> Sobrepeso
+                    <br> 🔸Entre 30,0 e 34,9 -> Obesidade grau I
+                    <br> 🔸Entre 35,0 e 39,9 -> Obsidade Grau II
+                    <br> 🔸Acima de 40,0 -> Obesidade grau III
+            </div>
 
 
-    </script>
+
+            <div class="encapsulamentoCalculadora">
+                <div id="avaliacao"></div>
+                <br>
+                <h3>Informe seu peso</h3>
+                <input id="peso" type="number" placeholder="00,00(kg)">
+                <h1></h1>
+                <h3>Informe sua altura</h3>
+                <input id="altura" type="number" placeholder="0,00">
+                <h1></h1>
+                <button onclick="calculoIMC()">Saiba seu IMC</button>
+                <h1></h1>
+                <h1></h1>
+
+                <div id="resultado"></div>
+
+                <script>
+
+                    function calculoIMC() {
+                        let resultado = document.querySelector("#resultado");
+                        let peso = parseFloat(document.getElementById("peso").value.replace(/,/g, "."));
+                        let altura = parseFloat(document.getElementById("altura").value.replace(/,/g, "."));
+
+                        if (isNaN(peso) || isNaN(altura) || altura <= 0 || peso <= 0) {
+                            resultado.innerHTML = `!!Verifique os campos de peso e altura e tente novamente!!`;
+                            return;
+                        }
+
+                        let imc = peso / (altura * altura);
+                        imc = parseFloat(imc.toFixed(2));
+
+                        resultado.innerHTML = `Indice de massa corporal: ${imc.toFixed(2)}`;
+
+                        avaliacao(imc);
+                    }
+
+                    function avaliacao(calculo) {
+                        let avaliacao = document.querySelector("#avaliacao");
+
+                        if (calculo < 18.5) {
+                            avaliacao.innerHTML = "<h2> Magreza </h2>";
+                        } else if (calculo > 18.5 && calculo < 25.00) {
+                            avaliacao.innerHTML = "<h2> Peso Normal </h2>";
+                        } else if (calculo > 24.99 && calculo < 30.00) {
+                            avaliacao.innerHTML = "<h2> Sobrepeso </h2>";
+                        } else if (calculo > 29.99 && calculo < 35.00) {
+                            avaliacao.innerHTML = "<h2> Obesidade grau I </h2>";
+                        } else if (calculo > 34.99 && calculo < 40.00) {
+                            avaliacao.innerHTML = "<h2> Obesidade grau II </h2>";
+                        } else {
+                            avaliacao.innerHTML = "<h2> Obesidade grau III</h2>";
+                        }
+
+                    }
+
+
+                </script>
 </body>
+
 </html>
