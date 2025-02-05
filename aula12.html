@@ -9,36 +9,48 @@
     <button onclick = "iniciarCalculo('*')">*</button>
     <button onclick = "iniciarCalculo('/')">/</button>
 
-    <div id = "resultado"></div>
+    <div id = "output"></div>
 
     <script>
-        var resuldado = document.querySelector('#resultado');
-        var n2 = parseFloat(prompt('Digite um número'));
+        //MELHORANDO A CALCULADORA
+        //TRY CATCH
+          //Tratam da exceção. Não deveria ter ocorrido mas ocorreu
+        let n1 = prompt('Digite um numero');
+        n1 = parseFloat(n1);
+        escreve(n1);
 
-        output(n2);
-        
         function iniciarCalculo(simbolo){
-            var n1 = document.querySelector("#resultado").textContent;
+            let n1 = document.querySelector('#output').textContent 
+            //Diferença entre textContent e innerHTML: textContent não aceita tags HTML
 
-            var n2 = parseFloat(prompt('Digite outro número'));
+            let n2 = prompt('Digite outro numero');
+            n2 = parseFloat(n2);
 
-            var msg = calcular(simbolo, n1, n2);
+            try{
+                let msg = calcular(simbolo, n1, n2);
+            } catch(e){
+                alert(e);
+                return;
+            }
 
-            output(msg);
+            escreve(msg);
         }
 
-        function output(mensagem){
-            resultado.innerHTML = mensagem;
-        }   
+        function escreve(mensagem){
+            let output = document.querySelector('#output');
+            output.innerHTML = mensagem;
+        }
 
         function calcular(simbolo, n1, n2){
 
             if (isNaN(n1) || isNaN(n2)){
-                alert("chama passando somente numeros")
+                // alert("chama passando somente numeros")
+                //supondo que queremos exibir um erro no console->
+                throw new Error ("chama passando somente numeros");
+
             }
             if(simbolo !== "+" && simbolo !== "-" && simbolo !== "*" && simbolo !== "/"){
-                alert("digite um simbolo valido")
-                return false;
+                throw new Error ("digite um simbolo valido");
             }
             var numeroCalculado = null;
 
@@ -54,10 +66,30 @@
                     break;
                 case "/":
                     numeroCalculado = n1 / n2;
-                    break;
             }
             return numeroCalculado;
         }
     </script>
 </body>
 </html>
+
+<!-- let n1 = document.querySelector('#resultado');
+n1 = parseFloat(n1);
+
+escreve(n1);
+
+function iniciarCalculo(simbolo){ 
+    var n1 = document.querySelector("#resultado").textContent;
+
+    var n2 = parseFloat(prompt('Digite outro número'));
+
+    var msg = calcular(simbolo, n1, n2);
+
+    output(msg);
+}
+
+function escreve(){
+    let output = 
+    document.querySelector('#output');
+    
+}    -->

@@ -4,48 +4,75 @@
 </head>
 <body>
     <h1>Lógica de Programação Java Script</h1>
-    
-    <button onclick="areaAlert()">Área alert</button>
-    <button onclick="areaOutput()">Área ouput </button>
-    <div id="output"></div>
+    <button onclick = "iniciarCalculo('+')">+</button>
+    <button onclick = "iniciarCalculo('-')">-</button>
+    <button onclick = "iniciarCalculo('*')">*</button>
+    <button onclick = "iniciarCalculo('/')">/</button>
+
+    <div id = "output"></div>
 
     <script>
-    //FUNÇÕES QUE RETORNAM VALORES
-    // Funções que retornam valores
-    // são úteis para que o desenvolvedor tenha autonomia.
-    // para decidir o que deseja fazer com o valor retornado
+        //MELHORANDO A CALCULADORA
+        let n1 = prompt('Digite um numero');
+        n1 = parseFloat(n1);
+        escreve(n1);
 
-    // Pedir para o usuário digitar dois números que representam os lados de um retângulo. 
-    // Mostrar na tela a área total de duas formas distintas: 
-    // Num alert ou na div#output (dependendo do botão clicado). 
-    // Esse código não precisa ser executado quando a página é aberta.
+        function iniciarCalculo(simbolo){
+            let n1 = document.querySelector('#output').textContent 
+            //Diferença entre textContent e innerHTML: textContent não aceita tags HTML
 
-    let output = document.querySelector("#output");
+            let n2 = prompt('Digite outro numero');
+            n2 = parseFloat(n2);
 
+            let msg = calcular(simbolo, n1, n2);
+            escreve(msg);
+        }
 
-    function areaOutput(){
-        let largura = parseFloat(prompt("Informe a largura do retângulo:"));
-        let altura = parseFloat(prompt("Informe a altura do retângulo:"));
+        function escreve(mensagem){
+            let output = document.querySelector('#output');
+            output.innerHTML = mensagem;
+        }
 
-        let area = CalculaArea(largura, altura);
-        output.innerHTML = (`Área total: ${area}`);
-    }
+        function calcular(simbolo, n1, n2){
 
-    function areaAlert(){
-        let largura = parseFloat(prompt("Informe a largura do retângulo:"));
-        let altura = parseFloat(prompt("Informe a altura do retângulo:"));
+            var numeroCalculado = null;
 
-        let area = CalculaArea(largura, altura);
-        alert(`Área total: ${area}`);
-    }
-
-    function CalculaArea(largura, altura){
-        let total = altura * largura;
-        return total;
-    }
-
-
-
+            switch(simbolo){
+                case "+":
+                    numeroCalculado = parseFloat(n1) + parseFloat(n2);
+                    break;
+                case "-":
+                    numeroCalculado = n1 - n2;
+                    break;
+                case "*":
+                    numeroCalculado = n1 * n2;
+                    break;
+                case "/":
+                    numeroCalculado = n1 / n2;
+            }
+            return numeroCalculado;
+        }
     </script>
 </body>
 </html>
+
+<!-- let n1 = document.querySelector('#resultado');
+n1 = parseFloat(n1);
+
+escreve(n1);
+
+function iniciarCalculo(simbolo){ 
+    var n1 = document.querySelector("#resultado").textContent;
+
+    var n2 = parseFloat(prompt('Digite outro número'));
+
+    var msg = calcular(simbolo, n1, n2);
+
+    output(msg);
+}
+
+function escreve(){
+    let output = 
+    document.querySelector('#output');
+    
+}    -->
