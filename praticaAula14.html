@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+
+    <script>
+        
+        // const semana = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sabado"];
+
+        // let dataAtual = new Date();
+        // let hoje = dataAtual.getDay(); // retorna o dia da semana 0 - domingo, 6 - sabado
+
+        // let boasVindas = alert(`Bem vindo, hoje é ${semana[hoje]}`);
+        // console.log(semana[hoje]);
+        // console.log(dataAtual);
+        // console.log(hoje);
+
+        //Realizr soma dos números pares presentes no array
+
+        let num = [25, 30, 45, 28, 0, 12, 78, 64];
+
+        soma = 0;
+
+        for(let i = 0; i < num.length; i++){
+            if(num[i] % 2 === 0){
+                soma += num[i];
+            }
+        }
+
+        alert(`As somas dos números pares presentes no array é: ${soma}`);
+
+    </script>
+</body>
+</html>
