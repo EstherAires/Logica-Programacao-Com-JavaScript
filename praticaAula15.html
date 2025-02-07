@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <title>Lógica de Programação Java Script</title>
+</head>
+
+<body>
+    <h1>Lógica de Programação Java Script</h1>
+    <br>
+    <div id="Produtos">
+        <h3>Produtos</h3>
+    </div>
+    <div id="estoque"></div>
+    <br><br>
+    <h4>Quantos produtos deseja comprar?</h4>
+    <input type="number" id="qtdCompra" placeholder="informe a quantidade">
+    <button id="comprarProduto" onclick="produto1.comprar()">Comprar</button>
+    <hr>
+    <h3>Hstórico</h3>
+    <div id="mensagem"></div>
+    <script>
+
+        //Objetos e propriedades de objetos
+        //São conjuntos de dados agrupados antre {}
+        //propriedades são variaveis criadas dentro de um objeto
+
+        //Mostrar na tela os dados de um produto específico, contendo quantidade em estoque e preço.
+        //Estes dados estão agrupados em um objeto
+
+
+        let estoque = document.getElementById("estoque");
+
+        let produto1 = {
+            tipo: "Livro",
+            nome: "Senhor dos Anéis",
+            genero: "Fantasia",
+            quantidade: 45,
+            preco: 115.00,
+        };
+
+        estoque.innerHTML = `Tipo de produto: ${produto1.tipo} <br> 
+                             Nome do Produto: ${produto1.nome} <br>  
+                             Preço: R$ ${(produto1.preco).toFixed(2)} <br> 
+                             Quantidade em Estoque:${produto1.quantidade}`;
+
+        produto1.comprar = function comprando() {
+            let qtd = document.getElementById("qtdCompra").value;
+            qtd = parseFloat(qtd);
+
+            this.quantidade -= qtd;
+            
+            let mensagem = document.getElementById("mensagem");
+            
+            mensagem.innerHTML = (`Produto comprado: ${produto1.tipo} <br>
+                                    Estoque atual: ${produto1.quantidade}<br><br>`)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
